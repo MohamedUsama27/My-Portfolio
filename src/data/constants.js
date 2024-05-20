@@ -14,8 +14,8 @@ export const Bio = {
   resume: "",
   linkedin: "",
   twitter: "",
-  insta: "",
-  facebook: "https://www.instagram.com/_.its_usama._/",
+  insta: "https://www.instagram.com/_.its_usama._/",
+  facebook: "",
 };
 
 export const skills = [
