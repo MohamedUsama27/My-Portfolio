@@ -154,12 +154,12 @@ export const skills = [
         name: "Docker",
         image:
           "https://raw.githubusercontent.com/devicons/devicon/master/icons/docker/docker-original-wordmark.svg",
-      },
+      },*/
       {
         name: "Netlify",
         image:
           "https://seeklogo.com/images/N/netlify-logo-BD8F8A77E2-seeklogo.com.png",
-      },*/
+      },
       {
         name: "VS Code",
         image:
@@ -187,12 +187,20 @@ export const skills = [
 export const experiences = [
   {
     id: 0,
-    role: "",
-    date: "",
-    desc: "",
-    skills: [
-      "",
-    ],
+    role: "eCommerce Manager",
+    img: "https://scontent.fcmb12-1.fna.fbcdn.net/v/t1.6435-9/208149342_1209286869532127_7588265313198438236_n.jpg?stp=dst-jpg_s552x414&_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=c2CAxaPeqloQ7kNvgFPxwcN&_nc_ht=scontent.fcmb12-1.fna&oh=00_AYDbfquWA7MhKqwawefcvdIRfIPgPMAb-3tU3JlgTGVWyA&oe=66745D1A",
+    company: "MyKade",
+    date: "Sep 2023 - Present",
+    desc: "As an eCommerce Manager, I oversaw online sales and marketing strategies, managed product listings and inventory, optimized the user experience, and analyzed performance metrics to drive growth and increase revenue. I ensured efficient order processing, coordinated with logistics, and enhanced brand visibility and customer engagement.",
+  },
+
+  {
+    id: 1,
+    role: "IT Coordinator",
+    img: "",
+    company: "General Community Service Association",
+    date: "Aug 2023 - Present",
+    desc: "As an IT Coordinator, I handled data entry, managed accounts, and maintained social media presence. I ensured seamless operations and online engagement.",
   },
 ];
 
@@ -239,7 +247,7 @@ export const projects = [
     description:
       "AURA Clothings is an online fashion store designed to offer a seamless and enjoyable shopping experience. It provides a user-friendly platform for customers to explore and purchase the latest fashion trends. Our website features an extensive catalog of clothing items with detailed descriptions and high-quality images, making it easy for customers to find and buy their perfect outfits. Personal accounts for order managements and a userfriendly admin panel",
     image:
-      "https://private-user-images.githubusercontent.com/170197514/332083309-8ccbe097-12d2-4913-b63f-2e2e7a12e831.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTYyMTI3NTksIm5iZiI6MTcxNjIxMjQ1OSwicGF0aCI6Ii8xNzAxOTc1MTQvMzMyMDgzMzA5LThjY2JlMDk3LTEyZDItNDkxMy1iNjNmLTJlMmU3YTEyZTgzMS5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MDUyMCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDA1MjBUMTM0MDU5WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MTVkM2Q3OTY2NzM2ZjJkMTc4N2NmMDBkY2MwYmNmYmYxMTcyNTc3MzNhZWNiZWVmNTAzZGY0ZTNlOTJiN2ZlNSZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.ChmPENZdCSs_N-fIWblVkqOQRlUc1yz7jlkV-h6uLao",
+      "https://private-user-images.githubusercontent.com/170197514/332083309-8ccbe097-12d2-4913-b63f-2e2e7a12e831.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTYyODcyMzUsIm5iZiI6MTcxNjI4NjkzNSwicGF0aCI6Ii8xNzAxOTc1MTQvMzMyMDgzMzA5LThjY2JlMDk3LTEyZDItNDkxMy1iNjNmLTJlMmU3YTEyZTgzMS5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MDUyMSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDA1MjFUMTAyMjE1WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9NDUxNDRlM2E1YTM4ZDMwMDAxYjQxMTYyY2VjMjdmODgzM2E2NGUyOGExZjgxZjBkYzg0M2M0MDY3OWRmZTBiNiZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.zYN16qGpeeytGAeFsrXx1MrQ2SmbBlgxRiOQ5zXQuSw",
     tags: [
       "PHP",
       "HTML",
@@ -259,7 +267,7 @@ export const projects = [
     description:
       "Developed a full-stack web application for OuterClove Restaurant, enabling users to browse the menu, make reservations, and order food online. Designed a user-friendly interface to ensure a seamless and enjoyable experience for customers, enhancing accessibility and convenience for users.",
     image:
-      "https://private-user-images.githubusercontent.com/170197514/332092655-71de0414-42c0-4a42-ae06-ae1738f3d5aa.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTYyMTQ3MDIsIm5iZiI6MTcxNjIxNDQwMiwicGF0aCI6Ii8xNzAxOTc1MTQvMzMyMDkyNjU1LTcxZGUwNDE0LTQyYzAtNGE0Mi1hZTA2LWFlMTczOGYzZDVhYS5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MDUyMCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDA1MjBUMTQxMzIyWiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9MTJhZDQyOTRhMjY1YmFmMmI1ZjZhZTAxZjViOTM4ODhiZGVlY2YyZTUyNDVmNTBlYTJjOGI1YTc5NjI2ZTRkZCZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.9sZqHuHneL91RQU5Sq_NcdMQGOADdaa1EF5ItiuWGZg",
+      "https://private-user-images.githubusercontent.com/170197514/332092655-71de0414-42c0-4a42-ae06-ae1738f3d5aa.jpeg?jwt=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJnaXRodWIuY29tIiwiYXVkIjoicmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbSIsImtleSI6ImtleTUiLCJleHAiOjE3MTYyODczMjcsIm5iZiI6MTcxNjI4NzAyNywicGF0aCI6Ii8xNzAxOTc1MTQvMzMyMDkyNjU1LTcxZGUwNDE0LTQyYzAtNGE0Mi1hZTA2LWFlMTczOGYzZDVhYS5qcGVnP1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9QUtJQVZDT0RZTFNBNTNQUUs0WkElMkYyMDI0MDUyMSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNDA1MjFUMTAyMzQ3WiZYLUFtei1FeHBpcmVzPTMwMCZYLUFtei1TaWduYXR1cmU9ZTMzMDdmZTg5NDhhZTIwNTQ2NzUwY2JjYWVhOTU3ZTk3MTk1NWFmNDVjYmQyODhhMTFjMWUxYWE3MjhiOGQ4MiZYLUFtei1TaWduZWRIZWFkZXJzPWhvc3QmYWN0b3JfaWQ9MCZrZXlfaWQ9MCZyZXBvX2lkPTAifQ.ENCRsMaL0zL9QgIu6ir-lu3SaMrily6j5P59W7aDoZY",
     tags: ["PHP","HTML","CSS","Java script","MySQL",],
     category: "web app",
     github: "https://github.com/MohamedUsama27/OuterClove-Restaurant",
