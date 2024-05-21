@@ -12,10 +12,10 @@ export const Bio = {
   github: "https://github.com/MohamedUsama27",
 
   resume: "https://drive.google.com/file/d/1YFps-UywDFgd9NNBPbqWATnyPK80jRlJ/view?usp=sharing",
-  linkedin: "",
+  linkedin: "https://www.linkedin.com/in/usama27/",
   twitter: "",
   insta: "https://www.instagram.com/_.its_usama._/",
-  facebook: "",
+  facebook: "https://fb.com/usama.king.984349",
 };
 
 export const skills = [
