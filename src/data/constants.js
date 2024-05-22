@@ -267,7 +267,7 @@ export const projects = [
     description:
       "Developed a full-stack web application for OuterClove Restaurant, enabling users to browse the menu, make reservations, and order food online. Designed a user-friendly interface to ensure a seamless and enjoyable experience for customers, enhancing accessibility and convenience for users.",
     image:
-      "https://raw.githubusercontent.com/MohamedUsama27/OuterClove-Restaurant/main/image.png",
+      "https://raw.githubusercontent.com/MohamedUsama27/OuterClove-Restaurant/main/image.jpeg",
     tags: ["PHP","HTML","CSS","Java script","MySQL",],
     category: "web app",
     github: "https://github.com/MohamedUsama27/OuterClove-Restaurant",
