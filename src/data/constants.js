@@ -247,7 +247,7 @@ export const projects = [
     description:
       "AURA Clothings is an online fashion store designed to offer a seamless and enjoyable shopping experience. It provides a user-friendly platform for customers to explore and purchase the latest fashion trends. Our website features an extensive catalog of clothing items with detailed descriptions and high-quality images, making it easy for customers to find and buy their perfect outfits. Personal accounts for order managements and a userfriendly admin panel",
     image:
-      "https://github-production-user-asset-6210df.s3.amazonaws.com/170197514/332083225-dd1574fd-ddea-46f4-8edc-6cda086b41c1.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240522%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240522T075601Z&X-Amz-Expires=300&X-Amz-Signature=37621e4254ec44451e94df82fbd08ce03ce449ee136f2ca0322592df440f0b20&X-Amz-SignedHeaders=host&actor_id=170197514&key_id=0&repo_id=803196582",
+      "https://raw.githubusercontent.com/MohamedUsama27/AuraClothings/master/aura%20image.jpeg",
     tags: [
       "PHP",
       "HTML",
@@ -267,7 +267,7 @@ export const projects = [
     description:
       "Developed a full-stack web application for OuterClove Restaurant, enabling users to browse the menu, make reservations, and order food online. Designed a user-friendly interface to ensure a seamless and enjoyable experience for customers, enhancing accessibility and convenience for users.",
     image:
-      "https://github-production-user-asset-6210df.s3.amazonaws.com/170197514/332092655-71de0414-42c0-4a42-ae06-ae1738f3d5aa.jpeg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240522%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240522T075731Z&X-Amz-Expires=300&X-Amz-Signature=fcc250830aa577ac65fb0d87e41c6506ef86c64f54b3826591841b4d586204bf&X-Amz-SignedHeaders=host&actor_id=170197514&key_id=0&repo_id=802857466",
+      "https://raw.githubusercontent.com/MohamedUsama27/OuterClove-Restaurant/main/image.png",
     tags: ["PHP","HTML","CSS","Java script","MySQL",],
     category: "web app",
     github: "https://github.com/MohamedUsama27/OuterClove-Restaurant",
