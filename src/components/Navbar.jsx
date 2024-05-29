@@ -5,7 +5,7 @@ import { MenuRounded } from "@mui/icons-material";
 import { Bio } from "../data/constants";
 
 const Nav = styled.div`
-    background-color:${({theme}) => theme.bg};
+    background-color:${({ theme }) => theme.bg};
     height:80px;
     display:flex;
     align-items:center;
@@ -51,13 +51,13 @@ const NavItems = styled.ul`
 `;
 
 const NavLink = styled.a`
-    color:${({theme}) => theme.text_primary};
+    color:${({ theme }) => theme.text_primary};
     font-weight:500g;
     cursor:pointer;
     transition: all 0.2s ease-in-out;
     text-decoration:none;
     &:hover {
-        color:${({theme}) => theme.primary};
+        color:${({ theme }) => theme.primary};
     }
 `;
 
@@ -94,7 +94,7 @@ const GithubButton = styled.a`
 `;
 
 const MobileIcon = styled.div`
-    color:${({theme}) => theme.text_primary};
+    color:${({ theme }) => theme.text_primary};
     height:100%;
     display:flex;
     align-items:center;
@@ -134,54 +134,58 @@ const Navbar = () => {
     const [isOpen, setIsOpen] = useState(false);
     const theme = useTheme();
     return (
-    <Nav>
-        <NavbarContainer>
-            <NavLogo to="/"> 
-                Mohamed Usama
-            </NavLogo>
+        <Nav>
+            <NavbarContainer>
+                <NavLogo to="/">
+                    Mohamed Usama
+                </NavLogo>
 
-            <MobileIcon onClick={() => setIsOpen(!isOpen)}>
-                <MenuRounded style={{color: "inherit"}} />
-            </MobileIcon>
+                <MobileIcon onClick={() => setIsOpen(!isOpen)}>
+                    <MenuRounded style={{ color: "inherit" }} />
+                </MobileIcon>
 
-            <NavItems>
-                <NavLink href="#about">About</NavLink>
-                <NavLink href="#Skills">Skills</NavLink>
-                <NavLink href="#Projects">Projects</NavLink>
-                <NavLink href="#Education">Education</NavLink>
-                <NavLink href="#Contact">Contact</NavLink>
-            </NavItems>
+                <NavItems>
+                    <NavLink href="#about">About</NavLink>
+                    <NavLink href="#Skills">Skills</NavLink>
+                    <NavLink href="#Experience">Experience</NavLink>
+                    <NavLink href="#Projects">Projects</NavLink>
+                    <NavLink href="#Education">Education</NavLink>
+                    <NavLink href="#Contact">Contact</NavLink>
+                </NavItems>
 
-            {isOpen && 
-            <MobileMenu isOpen={isOpen}>
-                <NavLink onClick={() => setIsOpen(!isOpen)} href="#about">
-                 About
-                </NavLink>
-                <NavLink onClick={() => setIsOpen(!isOpen)} href="#Skills">
-                 Skills
-                </NavLink>
-                <NavLink onClick={() => setIsOpen(!isOpen)} href="#Projects">
-                 Projects
-                </NavLink>
-                <NavLink onClick={() => setIsOpen(!isOpen)} href="#Education">
-                 Education
-                </NavLink>
-                <NavLink onClick={() => setIsOpen(!isOpen)} href="#Contact">
-                 Contact
-                </NavLink>
+                {isOpen &&
+                    <MobileMenu isOpen={isOpen}>
+                        <NavLink onClick={() => setIsOpen(!isOpen)} href="#about">
+                            About
+                        </NavLink>
+                        <NavLink onClick={() => setIsOpen(!isOpen)} href="#Skills">
+                            Skills
+                        </NavLink>
+                        <NavLink onClick={() => setIsOpen(!isOpen)} href="#Experience">
+                            Experience
+                        </NavLink>
+                        <NavLink onClick={() => setIsOpen(!isOpen)} href="#Projects">
+                            Projects
+                        </NavLink>
+                        <NavLink onClick={() => setIsOpen(!isOpen)} href="#Education">
+                            Education
+                        </NavLink>
+                        <NavLink onClick={() => setIsOpen(!isOpen)} href="#Contact">
+                            Contact
+                        </NavLink>
 
-                <GithubButton href={Bio.github}  target="_Blank" 
-                    style= {{ background: theme.primary,color: theme.text_primary,}}>
-                    Github Profile
-                </GithubButton>
-                
-            </MobileMenu>}
+                        <GithubButton href={Bio.github} target="_Blank"
+                            style={{ background: theme.primary, color: theme.text_primary, }}>
+                            Github Profile
+                        </GithubButton>
 
-            <ButtonContainer>
-            <GithubButton href={Bio.github} target="_Blank">Github Profile</GithubButton>
-            </ButtonContainer>
-        </NavbarContainer>
-    </Nav>
+                    </MobileMenu>}
+
+                <ButtonContainer>
+                    <GithubButton href={Bio.github} target="_Blank">Github Profile</GithubButton>
+                </ButtonContainer>
+            </NavbarContainer>
+        </Nav>
     );
 };
 
