@@ -197,7 +197,7 @@ export const experiences = [
   {
     id: 1,
     role: "IT Coordinator",
-    img: "",
+    img: "https://ibb.co/Vv2HjKV",
     company: "General Community Service Association",
     date: "Aug 2023 - Present",
     desc: "As an IT Coordinator, I handled data entry, managed accounts, and maintained social media presence. I ensured seamless operations and online engagement.",
