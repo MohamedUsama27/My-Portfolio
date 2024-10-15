@@ -133,43 +133,24 @@ const SubTitle = styled.div`
 `;
 
 const ResumeButton = styled.a`
-    -webkit-appearance: button;
-    -moz-appearance: button;
-    appearance: button;
-    text-decoration: none;
+    display: inline-block;
     width: 95%;
     max-width: 300px;
-    text-align: center;
     padding: 16px 0;
-
-    background: ${(props) => props.theme.button}; 
-    background: linear-gradient(
-        225deg,
-        ${(props) => props.theme.button} 0%,
-        ${(props) => props.theme.buttonGradientEnd || props.theme.button} 100%
-    );
-    background: -moz-linear-gradient(
-        225deg,
-        ${(props) => props.theme.button} 0%,
-        ${(props) => props.theme.buttonGradientEnd || props.theme.button} 100%
-    );
-    background: -webkit-linear-gradient(
-        225deg,
-        ${(props) => props.theme.button} 0%,
-        ${(props) => props.theme.buttonGradientEnd || props.theme.button} 100%
-    );
-    box-shadow: 20px 20px 60px ${({ theme }) => theme.sh};, -20px -20px 60px ${({ theme }) => theme.sh};
+    text-align: center;
     border-radius: 50px;
+    background-color: ${(props) => props.theme.button || 'blue'};
+    background: linear-gradient(225deg, ${(props) => props.theme.button} 0%, ${(props) => props.theme.buttonGradientEnd || props.theme.button} 100%);
+    color: ${(props) => props.theme.white || 'white'};
     font-weight: 600;
     font-size: 20px;
-    transition: all 0.4s ease-in-out;
-    color: ${(props) => props.theme.white};
+    text-decoration: none;
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out;
+    box-shadow: 6px 6px 30px ${({ theme }) => theme.sh};, -6px -6px 30px ${({ theme }) => theme.sh};
 
     &:hover {
         transform: scale(1.05);
-        transition: all 0.4s ease-in-out;
-        box-shadow: 20px 20px 60px ${({ theme }) => theme.sh};
-        filter: brightness(1);
+        box-shadow: -10px -10px 60px ${({ theme }) => theme.sh};, -15px -15px 60px ${({ theme }) => theme.sh};
     }
 
     @media (max-width: 640px) {
@@ -177,6 +158,8 @@ const ResumeButton = styled.a`
         font-size: 18px;
     }
 `;
+
+
 
 
 const Img = styled.img`

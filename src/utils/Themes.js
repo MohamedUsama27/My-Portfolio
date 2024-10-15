@@ -12,7 +12,7 @@ export const darkTheme = {
   black: "#000000",
   border: "rgba(255, 255, 255, 0.1)",
   shadow: "rgba(0, 0, 0, 0.5)",
-  sh: "#1f2634"
+  sh: "#331A64"
 };
 
 export const lightTheme = {
@@ -29,5 +29,5 @@ export const lightTheme = {
   black: "#000000",
   border: "rgba(0, 0, 0, 0.1)",
   shadow: "rgba(0, 0, 0, 0.1)",
-  sh: "#B7D2FF"
+  sh: "#5C8EE6"
 };
