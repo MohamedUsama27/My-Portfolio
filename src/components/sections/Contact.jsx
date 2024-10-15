@@ -52,11 +52,11 @@ const ContactForm = styled.form`
   max-width: 600px;
   display: flex;
   flex-direction: column;
-  background-color: rgba(17, 25, 40, 0.83);
-  border: 1px solid rgba(255, 255, 255, 0.125);
+  background-color: ${({ theme }) => theme.card_light}; // Adjust background based on theme
+  border: 1px solid ${({ theme }) => theme.text_secondary + 50}; // Adjust border based on theme
   padding: 32px;
   border-radius: 12px;
-  box-shadow: rgba(23, 92, 230, 0.1) 0px 4px 24px;
+  box-shadow: ${({ theme }) => theme.sh}; // Dynamic box shadow based on theme
   margin-top: 28px;
   gap: 12px;
 `;
@@ -65,34 +65,34 @@ const ContactTitle = styled.div`
   font-size: 28px;
   margin-bottom: 6px;
   font-weight: 600;
-  color: ${({ theme }) => theme.text_primary};
+  color: ${({ theme }) => theme.text_primary}; // Text color from theme
 `;
 
 const ContactInput = styled.input`
   flex: 1;
-  background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary + 50};
+  background-color: ${({ theme }) => theme.card_light}; // Input background based on theme
+  border: 1px solid ${({ theme }) => theme.text_secondary + 50}; // Border color based on theme
   outline: none;
   font-size: 18px;
-  color: ${({ theme }) => theme.text_primary};
+  color: ${({ theme }) => theme.text_primary}; // Text color from theme
   border-radius: 12px;
   padding: 12px 16px;
   &:focus {
-    border: 1px solid ${({ theme }) => theme.primary};
+    border: 1px solid ${({ theme }) => theme.primary}; // Focus border color from theme
   }
 `;
 
 const ContactInputMessage = styled.textarea`
   flex: 1;
-  background-color: transparent;
-  border: 1px solid ${({ theme }) => theme.text_secondary + 50};
+  background-color: ${({ theme }) => theme.card_light}; // Adjust based on theme
+  border: 1px solid ${({ theme }) => theme.text_secondary + 50}; 
   outline: none;
   font-size: 18px;
-  color: ${({ theme }) => theme.text_primary};
+  color: ${({ theme }) => theme.text_primary}; 
   border-radius: 12px;
   padding: 12px 16px;
   &:focus {
-    border: 1px solid ${({ theme }) => theme.primary};
+    border: 1px solid ${({ theme }) => theme.primary}; 
   }
 `;
 
@@ -100,15 +100,17 @@ const ContactButton = styled.input`
   width: 100%;
   text-decoration: none;
   text-align: center;
-  background: hsla(271, 100%, 50%, 1);
+  background: ${({ theme }) => theme.primary}; // Button background color from theme
   padding: 13px 16px;
   margin-top: 2px;
   border-radius: 12px;
   border: none;
-  color: ${({ theme }) => theme.text_primary};
+  color: ${({ theme }) => theme.text_button}; // Button text color based on theme
   font-size: 18px;
   font-weight: 600;
 `;
+
+
 
 const Contact = () => {
   const form = useRef();

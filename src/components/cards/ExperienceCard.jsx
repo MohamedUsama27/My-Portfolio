@@ -2,6 +2,20 @@ import React from "react";
 import styled from "styled-components";
 import { VerticalTimelineElement } from "react-vertical-timeline-component";
 
+const StyledVerticalTimelineElement = styled(VerticalTimelineElement)`
+  .vertical-timeline-element-content {
+    background: ${({ theme }) => theme.card_light};
+    color: ${({ theme }) => theme.text_primary};
+    box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
+    border: 1px solid rgba(255, 255, 255, 0.125);
+    border-radius: 6px;
+  }
+
+  .vertical-timeline-element-content-arrow {
+    border-right: 7px solid ${({ theme }) => theme.card_light + "99"};
+  }
+`;
+
 const Top = styled.div`
   width: 100%;
   display: flex;
@@ -96,7 +110,7 @@ const ItemWrapper = styled.div`
 
 const ExperienceCard = ({ experience }) => {
   return (
-    <VerticalTimelineElement
+    <StyledVerticalTimelineElement
       icon={
         <img
           width="100%"
@@ -106,21 +120,6 @@ const ExperienceCard = ({ experience }) => {
           src={experience.img}
         />
       }
-      contentStyle={{
-        display: "flex",
-        flexDirection: "column",
-        gap: "12px",
-        background: "#1d1836",
-        color: "#fff",
-        boxShadow: "rgba(23, 92, 230, 0.15) 0px 4px 24px",
-        // backdropFilter: "blur(3px) saturate(106%)",
-        backgroundColor: "rgba(17, 25, 40, 0.83)",
-        border: "1px solid rgba(255, 255, 255, 0.125)",
-        borderRadius: "6px",
-      }}
-      contentArrowStyle={{
-        borderRight: "7px solid  rgba(255, 255, 255, 0.3)",
-      }}
       date={experience.date}
     >
       <Top>
@@ -140,15 +139,16 @@ const ExperienceCard = ({ experience }) => {
               <b>Skills:</b>
               <ItemWrapper>
                 {experience?.skills?.map((skill, index) => (
-                  <Skill>• {skill}</Skill>
+                  <Skill key={index}>• {skill}</Skill>
                 ))}
               </ItemWrapper>
             </Skills>
           </>
         )}
       </Description>
-    </VerticalTimelineElement>
+    </StyledVerticalTimelineElement>
   );
 };
+
 
 export default ExperienceCard;

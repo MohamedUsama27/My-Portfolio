@@ -5,18 +5,29 @@ export const darkTheme = {
   text_primary: "#F2F3F4",
   text_secondary: "#b1b2b3",
   card: "#171721",
-  card_light: "#191924",
-  button: "#854CE6",
+  card_light: "rgb(17, 23, 36)",
+  button: "#6F22F3", 
+  buttonGradientEnd: "#D300D3",
   white: "#FFFFFF",
   black: "#000000",
+  border: "rgba(255, 255, 255, 0.1)",
+  shadow: "rgba(0, 0, 0, 0.5)",
+  sh: "#1f2634"
 };
 
 export const lightTheme = {
-  bg: "#FFFFFF",
-  bgLight: "#f0f0f0",
-  primary: "#be1adb",
-  text_primary: "#111111",
-  text_secondary: "#48494a",
+  bg: "linear-gradient(270deg, #D8D8FF, #E6E8FF, #FBE6FF, #FFFFFF)", 
+  bgLight: "#FFFFFF",
+  primary: "#007BFF",
+  text_primary: "#212121",
+  text_secondary: "#616161",
   card: "#FFFFFF",
-  button: "#5c5b5b",
+  card_light: "#F5F5F5",
+  button: "#007BFF", 
+  buttonGradientEnd: "#6F22F3", 
+  white: "#FFFFFF",
+  black: "#000000",
+  border: "rgba(0, 0, 0, 0.1)",
+  shadow: "rgba(0, 0, 0, 0.1)",
+  sh: "#B7D2FF"
 };
