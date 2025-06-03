@@ -190,6 +190,15 @@ export const skills = [
 export const experiences = [
   {
     id: 0,
+    role: "Junior Analyst",
+    img: "https://images.squarespace-cdn.com/content/v1/667ba828ecdb31477cea64e7/b58d1865-1373-4e32-bae5-8d5f9e406344/LOGO+with+SLOGAN+-+BLACK.png?format=1500w",
+    company: "Impact Innovstions",
+    date: "Nov 2024 - March 2025",
+    desc: "I played a key role in ETL processes by extracting data from multiple databases, transforming it to meet business needs, and loading it for reporting and analysis. I gained extensive experience in data processing, automation, and optimization, which improved workflows and ensured data accuracy. Additionally, I contributed to data integration, quality, and compliance by applying strong problem-solving skills and attention to detail, while collaborating with cross-functional teams to enhance performance and support data-driven decision-making.",
+  },
+
+  {
+    id: 1,
     role: "eCommerce Manager",
     img: "https://lzd-img-global.slatic.net/3rd/q/aHR0cHM6Ly9say1saXZlLTIxLnNsYXRpYy5uZXQva2YvU2M5OTFjNTRjZjVmZjRlZTI5YzQyZTgzYzRhZDhmZWM5WS5qcGc=_120x120q75.png_.webp",
     company: "MyKade",
@@ -198,7 +207,7 @@ export const experiences = [
   },
 
   {
-    id: 1,
+    id: 2,
     role: "IT Coordinator",
     img: "https://ibb.co/Vv2HjKV",
     company: "General Community Service Association",
