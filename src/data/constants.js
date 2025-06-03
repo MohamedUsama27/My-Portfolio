@@ -11,7 +11,7 @@ export const Bio = {
 
   github: "https://github.com/MohamedUsama27",
 
-  resume: "https://drive.google.com/file/d/1Z07Q8cf0zTOPrSyHsNJmh9DixdNX0-vL/view?usp=sharing",
+  resume: "https://drive.google.com/file/d/1T7qZY1YhfObzBHUjBHtsVLUx3nPUWiNX/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/usama27/",
   twitter: "",
   insta: "https://www.instagram.com/_.its_usama._/",
