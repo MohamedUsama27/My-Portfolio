@@ -239,7 +239,7 @@ export const education = [
   
   {
     id: 2,
-    img: "https://www.nysc.lk/assets/img/pre-logo.png",
+    img: "https://studyway-resources.s3.amazonaws.com/profilePictures/1706876332945.jpg",
     school: "Sri Lanka Youth School of Computing, Maharagama",
     date: "Apr 2021 - Apr 2022",
     desc: "I completed Cisco Certified Network Associate at SYSC School, Maharagama, where I studied Enterprise Networking, Security, and Automation (ENSA) describes the architecture, components, operations, and security to scale for large, complex networks, including wide area network (WAN) technologies.",
@@ -247,7 +247,7 @@ export const education = [
   },
   {
     id: 3,
-    img: "http://www.ratdampal.sch.lk/images/logo.png",
+    img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRHDQAcPg9WPvNUHnpqTD4kq_-IlB2Z3D5Xag&s",
     school: "Dharmapala High School, Ratnapura",
     date: "August 2018 - December 2020",
     desc: "I completed my class 12 high school education at Dharmapala High School, Ratnapura, where I studied Information and Comunication Technology, Accounting and Economics.",
