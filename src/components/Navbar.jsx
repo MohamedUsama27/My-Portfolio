@@ -126,27 +126,29 @@ const MobileIcon = styled.div`
 
 
 const MobileMenu = styled.ul`
-  position: absolute;
-  top: 80px;
+  position: fixed;
+  top: 80px; /* below sticky navbar */
   right: 0;
+  left: 0;
   width: 100%;
-  background: ${({ theme }) => theme.card_light + '99'};
+  max-height: calc(100vh - 80px);
+  overflow-y: auto;
+
+  background: ${({ theme }) => theme.card_light + 'F0'};
   border-radius: 0 0 20px 20px;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 
   list-style: none;
-  padding: 12px 40px 24px 40px;
+  padding: 24px 40px;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  align-items: flex-start;
 
   transition: all 0.4s ease-in-out;
-
   transform: ${({ isOpen }) => (isOpen ? 'translateY(0)' : 'translateY(-20px)')};
   opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
   pointer-events: ${({ isOpen }) => (isOpen ? 'auto' : 'none')};
-  z-index: ${({ isOpen }) => (isOpen ? '1000' : '-1')};
+  z-index: ${({ isOpen }) => (isOpen ? '999' : '-1')};
 
   @media screen and (min-width: 769px) {
     display: none;
@@ -214,53 +216,47 @@ const Navbar = ({ toggleTheme, isDarkTheme }) => {
   const theme = useTheme();
 
   return (
-    <Nav>
-      <NavbarContainer>
-        <NavLogo to="/">Mohamed Usama</NavLogo>
+    <>
+      <Nav>
+        <NavbarContainer>
+          <NavLogo to="/">Mohamed Usama</NavLogo>
 
-        <MobileRightContainer>
-          <ThemeToggleButton className="mobile" onClick={toggleTheme}>
-            <LightMode className={isDarkTheme ? "active" : ""} style={{ color: theme.text_primary }} />
-            <DarkMode className={!isDarkTheme ? "active" : ""} style={{ color: theme.text_primary }} />
-          </ThemeToggleButton>
+          <MobileRightContainer>
+            <ThemeToggleButton className="mobile" onClick={toggleTheme}>
+              <LightMode className={isDarkTheme ? "active" : ""} />
+              <DarkMode className={!isDarkTheme ? "active" : ""} />
+            </ThemeToggleButton>
 
-          <MobileIcon onClick={() => setIsOpen(!isOpen)}>
-            <MenuRounded style={{ color: theme.text_primary }} />
-          </MobileIcon>
-        </MobileRightContainer>
+            <MobileIcon onClick={() => setIsOpen(!isOpen)}>
+              <MenuRounded />
+            </MobileIcon>
+          </MobileRightContainer>
 
-        <NavItems>
-          <NavLink href="#about">About</NavLink>
-          <NavLink href="#Skills">Skills</NavLink>
-          <NavLink href="#Experience">Experience</NavLink>
-          <NavLink href="#Projects">Projects</NavLink>
-          <NavLink href="#Education">Education</NavLink>
-          <NavLink href="#Contact">Contact</NavLink>
-        </NavItems>
+          <NavItems>
+            {/* desktop links */}
+          </NavItems>
 
-        <MobileMenu isOpen={isOpen}>
-          <NavLink onClick={() => setIsOpen(false)} href="#about">About</NavLink>
-          <NavLink onClick={() => setIsOpen(false)} href="#Skills">Skills</NavLink>
-          <NavLink onClick={() => setIsOpen(false)} href="#Experience">Experience</NavLink>
-          <NavLink onClick={() => setIsOpen(false)} href="#Projects">Projects</NavLink>
-          <NavLink onClick={() => setIsOpen(false)} href="#Education">Education</NavLink>
-          <NavLink onClick={() => setIsOpen(false)} href="#Contact">Contact</NavLink>
-          <GithubButton href={Bio.github} target="_blank">
-            Github Profile
-          </GithubButton>
-        </MobileMenu>
+          <ButtonContainer>
+            <GithubButton href={Bio.github} target="_blank">Github Profile</GithubButton>
+            <ThemeToggleButton className="desktop" onClick={toggleTheme}>
+              <LightMode className={isDarkTheme ? "active" : ""} />
+              <DarkMode className={!isDarkTheme ? "active" : ""} />
+            </ThemeToggleButton>
+          </ButtonContainer>
+        </NavbarContainer>
+      </Nav>
 
-        <ButtonContainer>
-          <GithubButton href={Bio.github} target="_Blank">
-            Github Profile
-          </GithubButton>
-          <ThemeToggleButton onClick={toggleTheme}>
-            <LightMode className={isDarkTheme ? "active" : ""} style={{ color: theme.text_primary }} /> {/* Updated */}
-            <DarkMode className={!isDarkTheme ? "active" : ""} style={{ color: theme.text_primary }} /> {/* Updated */}
-          </ThemeToggleButton>
-        </ButtonContainer>
-      </NavbarContainer>
-    </Nav>
+      {/* Outside the Nav component */}
+      <MobileMenu isOpen={isOpen}>
+        <NavLink onClick={() => setIsOpen(false)} href="#about">About</NavLink>
+        <NavLink onClick={() => setIsOpen(false)} href="#Skills">Skills</NavLink>
+        <NavLink onClick={() => setIsOpen(false)} href="#Experience">Experience</NavLink>
+        <NavLink onClick={() => setIsOpen(false)} href="#Projects">Projects</NavLink>
+        <NavLink onClick={() => setIsOpen(false)} href="#Education">Education</NavLink>
+        <NavLink onClick={() => setIsOpen(false)} href="#Contact">Contact</NavLink>
+        <GithubButton href={Bio.github} target="_blank">Github Profile</GithubButton>
+      </MobileMenu>
+    </>
   );
 };
 
