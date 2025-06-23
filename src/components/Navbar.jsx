@@ -134,9 +134,13 @@ const MobileMenu = styled.ul`
   max-height: calc(100vh - 80px);
   overflow-y: auto;
 
-  background: ${({ theme }) => theme.card_light + 'F0'};
+  background: rgba(255, 255, 255, 0.1); /* Light transparent */
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Optional glass border */
   border-radius: 0 0 20px 20px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+
 
   list-style: none;
   padding: 24px 40px;
