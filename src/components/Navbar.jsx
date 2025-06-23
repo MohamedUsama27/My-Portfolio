@@ -209,10 +209,10 @@ const Navbar = ({ toggleTheme, isDarkTheme }) => {
           <MenuRounded style={{ color: theme.text_primary }} /> {/* Updated */}
         </MobileIcon>
 
-        <ThemeButton onClick={toggleTheme}>
-          <LightMode className={isDarkTheme ? "active" : ""} style={{ color: theme.text_primary }} /> {/* Updated */}
-          <DarkMode className={!isDarkTheme ? "active" : ""} style={{ color: theme.text_primary }} /> {/* Updated */}
-        </ThemeButton>
+        <ThemeToggleButton className="mobile" onClick={toggleTheme}>
+          <LightMode className={isDarkTheme ? "active" : ""} style={{ color: theme.text_primary }} />
+          <DarkMode className={!isDarkTheme ? "active" : ""} style={{ color: theme.text_primary }} />
+        </ThemeToggleButton>
 
         <NavItems>
           <NavLink href="#about">About</NavLink>
