@@ -161,25 +161,36 @@ const ThemeToggleButton = styled.button`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: background 0.4s ease-in-out; /* Smooth transition for background color */
+  transition: background 0.4s ease-in-out;
 
   &:hover {
     background: ${({ theme }) => theme.primary};
     color: ${({ theme }) => theme.text_primary};
   }
 
-  /* Icon container */
   svg {
     position: absolute;
-    transition: opacity 0.4s ease, transform 0.4s ease; /* Smooth opacity and scale transition */
-    opacity: 0; /* Default opacity to hidden */
-    transform: scale(0.8); /* Default scale to slightly smaller */
+    transition: opacity 0.4s ease, transform 0.4s ease;
+    opacity: 0;
+    transform: scale(0.8);
   }
 
-  /* Display active icon */
   svg.active {
-    opacity: 1; /* Show active icon */
-    transform: scale(1); /* Scale up to normal size */
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  &.mobile {
+    display: none;
+    @media screen and (max-width: 768px) {
+      display: flex;
+    }
+  }
+
+  &.desktop {
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
   }
 `;
 
