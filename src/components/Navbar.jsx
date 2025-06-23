@@ -123,31 +123,34 @@ const MobileIcon = styled.div`
     display: block;
   }
 `;
-const ThemeButton = styled.div`
-display: none;
- @media screen and (max-width: 768px) {
-    display: block;
-    `
+
 
 const MobileMenu = styled.ul`
-  width: 100%;
-  display: flex;
-  align-items: start;
-  gap: 16px;
-  flex-direction: column;
-  list-style: none;
-  padding: 12px 40px 24px 40px;
-  background: ${({ theme }) => theme.card_light + 99};
   position: absolute;
   top: 80px;
   right: 0;
-
-  transition: all 0.6s ease-in-out;
-  transform: ${({ isOpen }) => (isOpen ? "translateY(0)" : "translateY(-100%)")};
+  width: 100%;
+  background: ${({ theme }) => theme.card_light + '99'};
   border-radius: 0 0 20px 20px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
-  opacity: ${({ isOpen }) => (isOpen ? "100%" : "0")};
-  z-index: ${({ isOpen }) => (isOpen ? "1000" : "-1000")};
+
+  list-style: none;
+  padding: 12px 40px 24px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  align-items: flex-start;
+
+  transition: all 0.4s ease-in-out;
+
+  transform: ${({ isOpen }) => (isOpen ? 'translateY(0)' : 'translateY(-20px)')};
+  opacity: ${({ isOpen }) => (isOpen ? '1' : '0')};
+  pointer-events: ${({ isOpen }) => (isOpen ? 'auto' : 'none')};
+  z-index: ${({ isOpen }) => (isOpen ? '1000' : '-1')};
+
+  @media screen and (min-width: 769px) {
+    display: none;
+  }
 `;
 
 const ThemeToggleButton = styled.button`
@@ -194,6 +197,16 @@ const ThemeToggleButton = styled.button`
   }
 `;
 
+const MobileRightContainer = styled.div`
+  display: none;
+  align-items: center;
+  gap: 12px;
+
+  @media screen and (max-width: 768px) {
+    display: flex;
+  }
+`;
+
 
 
 const Navbar = ({ toggleTheme, isDarkTheme }) => {
@@ -205,14 +218,16 @@ const Navbar = ({ toggleTheme, isDarkTheme }) => {
       <NavbarContainer>
         <NavLogo to="/">Mohamed Usama</NavLogo>
 
-        <MobileIcon onClick={() => setIsOpen(!isOpen)}>
-          <MenuRounded style={{ color: theme.text_primary }} /> {/* Updated */}
-        </MobileIcon>
+        <MobileRightContainer>
+          <ThemeToggleButton className="mobile" onClick={toggleTheme}>
+            <LightMode className={isDarkTheme ? "active" : ""} style={{ color: theme.text_primary }} />
+            <DarkMode className={!isDarkTheme ? "active" : ""} style={{ color: theme.text_primary }} />
+          </ThemeToggleButton>
 
-        <ThemeToggleButton className="mobile" onClick={toggleTheme}>
-          <LightMode className={isDarkTheme ? "active" : ""} style={{ color: theme.text_primary }} />
-          <DarkMode className={!isDarkTheme ? "active" : ""} style={{ color: theme.text_primary }} />
-        </ThemeToggleButton>
+          <MobileIcon onClick={() => setIsOpen(!isOpen)}>
+            <MenuRounded style={{ color: theme.text_primary }} />
+          </MobileIcon>
+        </MobileRightContainer>
 
         <NavItems>
           <NavLink href="#about">About</NavLink>
@@ -223,32 +238,17 @@ const Navbar = ({ toggleTheme, isDarkTheme }) => {
           <NavLink href="#Contact">Contact</NavLink>
         </NavItems>
 
-        {isOpen && (
-          <MobileMenu isOpen={isOpen}>
-            <NavLink onClick={() => setIsOpen(!isOpen)} href="#about">
-              About
-            </NavLink>
-            <NavLink onClick={() => setIsOpen(!isOpen)} href="#Skills">
-              Skills
-            </NavLink>
-            <NavLink onClick={() => setIsOpen(!isOpen)} href="#Experience">
-              Experience
-            </NavLink>
-            <NavLink onClick={() => setIsOpen(!isOpen)} href="#Projects">
-              Projects
-            </NavLink>
-            <NavLink onClick={() => setIsOpen(!isOpen)} href="#Education">
-              Education
-            </NavLink>
-            <NavLink onClick={() => setIsOpen(!isOpen)} href="#Contact">
-              Contact
-            </NavLink>
-
-            <GithubButton href={Bio.github} target="_Blank">
-              Github Profile
-            </GithubButton>
-          </MobileMenu>
-        )}
+        <MobileMenu isOpen={isOpen}>
+          <NavLink onClick={() => setIsOpen(false)} href="#about">About</NavLink>
+          <NavLink onClick={() => setIsOpen(false)} href="#Skills">Skills</NavLink>
+          <NavLink onClick={() => setIsOpen(false)} href="#Experience">Experience</NavLink>
+          <NavLink onClick={() => setIsOpen(false)} href="#Projects">Projects</NavLink>
+          <NavLink onClick={() => setIsOpen(false)} href="#Education">Education</NavLink>
+          <NavLink onClick={() => setIsOpen(false)} href="#Contact">Contact</NavLink>
+          <GithubButton href={Bio.github} target="_blank">
+            Github Profile
+          </GithubButton>
+        </MobileMenu>
 
         <ButtonContainer>
           <GithubButton href={Bio.github} target="_Blank">
