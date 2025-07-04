@@ -263,9 +263,26 @@ export const education = [
   }
 ];
 
+
+import DynamicNotchImage from '../images/DynamicNotchWEB.png'; 
+
+
+
 export const projects = [
+
   {
     id: 0,
+    title: "Dynamic Notch",
+    category: "macos app",
+    description:
+      "Elyra transforms your Mac’s notch into a beautiful, interactive space. From elegant clock widgets and real-time Spotify playback to looping visuals and productivity tools, Elyra brings style and function right to the top of your screen. With smooth animations, native performance, and rich customization, your notch becomes more than just a cutout — it becomes a living part of your desktop. Crafted with love for macOS. Designed to feel like magic.",
+    image: DynamicNotchImage,
+    tags: ["Swift", "Appkit", "Xcode",],
+    webapp: "",
+  },
+
+  {
+    id: 1,
     title: "AURA Clothing Center",
     date: "Mar 2024 - Apr 2024",
     description:
@@ -285,7 +302,7 @@ export const projects = [
   },
 
   {
-    id: 0,
+    id: 2,
     title: "OuterClove Restaurant",
     date: "Dec 2023 - Jan 2024",
     description:

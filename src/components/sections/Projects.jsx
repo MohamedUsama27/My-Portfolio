@@ -121,8 +121,8 @@ const Projects = ({ openModal, setOpenModal }) => {
         <Devider />
 
         <ToggleButton
-            active = {toggle==="android app"}
-            onClick={() => setToggle("android app")}>ANDROID APP'S</ToggleButton>
+            active = {toggle==="macos app"}
+            onClick={() => setToggle("macos app")}>MacOS APP'S</ToggleButton>
          
         </ToggleButtonGroup>
 
