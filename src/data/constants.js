@@ -1,3 +1,5 @@
+import DynamicNotchImage from '../images/DynamicNotchWEB.png';
+
 export const Bio = {
   name: "Mohamed Usama",
   roles: [
@@ -264,7 +266,6 @@ export const education = [
 ];
 
 
-import DynamicNotchImage from '../images/DynamicNotchWEB.png'; 
 
 
 
@@ -321,4 +322,5 @@ export const projects = [
     category: "android app",
   },
   
+
 ];
