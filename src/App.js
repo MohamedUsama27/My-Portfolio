@@ -11,12 +11,14 @@ import Footer from "./components/sections/Footer";
 import ProjectDetails from "./components/Dialog/ProjectDetails";
 import { useState, useEffect } from "react";
 import Experience from "./components/sections/Experience";
+import SplashCursor from './utils/SplashCursor';
+import GradualBlur from './utils/GradualBlur';
 
 
 const Body = styled.div`
-  background: ${({ theme }) => theme.bg}; /* Apply gradient from theme */
-  background-size: 400% 400%; /* Expand background to allow for animation */
-  animation: gradientAnimation 15s ease infinite; /* Animation loop */
+  background: ${({ theme }) => theme.bg};
+  background-size: 400% 400%; 
+  animation: gradientAnimation 15s ease infinite;
   color: ${({ theme }) => theme.text_primary};
   width: 100%;
   height: 90vh;
@@ -115,10 +117,15 @@ function App() {
   }, []);
 
   return (
+
+
     <ThemeProvider theme={isDarkTheme ? darkTheme : lightTheme}>
+
+
       <BrowserRouter>
         <Navbar isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} /> {/* Pass isDarkTheme */}
         <Body>
+          <SplashCursor />
           <Hero />
           <Wrapper scrollY={scrollY}>
             <Skills />
@@ -136,6 +143,25 @@ function App() {
               setOpenModal={setOpenModal}
             />
           )}
+
+          <GradualBlur
+            target="viewport"
+            position="bottom"
+            height="6rem"
+            strength={2}
+            divCount={5}
+            curve="bezier"
+            exponential={true}
+            opacity={1}
+            style={{
+              position: "fixed",
+              bottom: 0,
+              left: 0,
+              width: "100%",
+              pointerEvents: "none",
+              zIndex: 100,
+            }}
+          />
         </Body>
       </BrowserRouter>
     </ThemeProvider>

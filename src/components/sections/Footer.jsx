@@ -5,7 +5,7 @@ import { FacebookRounded, Instagram, LinkedIn, Twitter, } from "@mui/icons-mater
 
 const FooterContainer = styled.div`
   width: 100%;
-  padding: 2rem 0;
+  padding: 4rem 0;
   display: flex;
   justify-content: center;
   z-index: 10;
