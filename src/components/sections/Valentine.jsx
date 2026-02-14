@@ -72,6 +72,7 @@ const ValentinePage = () => {
 
     // Refs
     const containerRef = useRef(null);
+    const audioRef = useRef(null);
     const buttonContainerRef = useRef(null);
     const noButtonRef = useRef(null);
     const yesButtonRef = useRef(null);
@@ -139,6 +140,41 @@ const ValentinePage = () => {
             setImages(generateRandomImages());
         }
     }, [step, generateRandomImages]);
+
+    useEffect(() => {
+        const audio = audioRef.current;
+        if (!audio) return;
+
+        audio.muted = true;
+        audio.volume = 0.5;
+
+        const tryPlay = () => {
+            const playPromise = audio.play();
+            if (playPromise?.catch) {
+                playPromise.catch(() => { });
+            }
+        };
+
+        tryPlay();
+
+        const handleFirstInteraction = () => {
+            audio.muted = false;
+            tryPlay();
+            window.removeEventListener('click', handleFirstInteraction);
+            window.removeEventListener('keydown', handleFirstInteraction);
+            window.removeEventListener('touchstart', handleFirstInteraction);
+        };
+
+        window.addEventListener('click', handleFirstInteraction);
+        window.addEventListener('keydown', handleFirstInteraction);
+        window.addEventListener('touchstart', handleFirstInteraction);
+
+        return () => {
+            window.removeEventListener('click', handleFirstInteraction);
+            window.removeEventListener('keydown', handleFirstInteraction);
+            window.removeEventListener('touchstart', handleFirstInteraction);
+        };
+    }, []);
 
     const resetChasePopup = useCallback(() => {
         if (chaseTimeoutRef.current) {
@@ -340,6 +376,14 @@ const ValentinePage = () => {
     // ---------- Render ----------
     return (
         <div ref={containerRef} style={styles.container}>
+            <audio
+                ref={audioRef}
+                src="/image/bg_music.mp3"
+                autoPlay
+                loop
+                preload="auto"
+                playsInline
+            />
             <style>{`
         @import url('https://fonts.googleapis.com/css2?family=Great+Vibes&family=Pacifico&family=Dancing+Script:wght@400;700&display=swap');
         body {

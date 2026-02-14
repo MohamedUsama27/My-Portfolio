@@ -9,7 +9,7 @@ import Projects from "./components/sections/Projects";
 import Contact from "./components/sections/Contact";
 import Footer from "./components/sections/Footer";
 import ProjectDetails from "./components/Dialog/ProjectDetails";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Experience from "./components/sections/Experience";
 import SplashCursor from './utils/SplashCursor';
 import GradualBlur from './utils/GradualBlur';
@@ -100,6 +100,7 @@ function App() {
   const [openModal, setOpenModal] = useState({ state: false, project: null });
   const [isDarkTheme, setIsDarkTheme] = useState(true); // Manage theme state
   const [scrollY, setScrollY] = useState(0);
+  const audioRef = useRef(null);
 
   const toggleTheme = () => {
     setIsDarkTheme(!isDarkTheme); // Toggle between light and dark themes
@@ -117,6 +118,37 @@ function App() {
     };
   }, []);
 
+  useEffect(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+
+    const tryPlay = () => {
+      const playPromise = audio.play();
+      if (playPromise?.catch) {
+        playPromise.catch(() => { });
+      }
+    };
+
+    tryPlay();
+
+    const handleFirstInteraction = () => {
+      tryPlay();
+      window.removeEventListener("click", handleFirstInteraction);
+      window.removeEventListener("keydown", handleFirstInteraction);
+      window.removeEventListener("touchstart", handleFirstInteraction);
+    };
+
+    window.addEventListener("click", handleFirstInteraction);
+    window.addEventListener("keydown", handleFirstInteraction);
+    window.addEventListener("touchstart", handleFirstInteraction);
+
+    return () => {
+      window.removeEventListener("click", handleFirstInteraction);
+      window.removeEventListener("keydown", handleFirstInteraction);
+      window.removeEventListener("touchstart", handleFirstInteraction);
+    };
+  }, []);
+
   return (
 
 
@@ -130,6 +162,13 @@ function App() {
             path="/"
             element={
               <Body>
+                <audio
+                  ref={audioRef}
+                  src="/image/bg_music.mp3"
+                  autoPlay
+                  loop
+                  preload="auto"
+                />
                 <SplashCursor />
                 <Hero />
                 <Wrapper scrollY={scrollY}>
