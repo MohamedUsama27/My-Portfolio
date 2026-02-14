@@ -18,10 +18,10 @@ const catchGif = '/image/catch.gif';
 
 // Decorative external images (roses, hearts, etc.) – using free icons
 const decorImages = [
-    'https://cdn-icons-png.flaticon.com/512/2107/2107845.png', // rose
-    'https://cdn-icons-png.flaticon.com/512/833/833472.png', // heart
-    'https://cdn-icons-png.flaticon.com/512/1029/1029183.png', // heart balloon
-    'https://cdn-icons-png.flaticon.com/512/1683/1683000.png', // love letter
+    'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f339.png', // rose
+    'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/2764.png', // heart
+    'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f49d.png', // heart with ribbon
+    'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f48c.png', // love letter
 ];
 
 // -------------------- Helper: generate random positions within a container --------------------
