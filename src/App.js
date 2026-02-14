@@ -1,7 +1,7 @@
 import styled, { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "./utils/Themes";
 import Navbar from "./components/Navbar";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Hero from "./components/sections/Hero";
 import Skills from "./components/sections/Skills";
 import Education from "./components/sections/Education";
@@ -13,6 +13,7 @@ import { useState, useEffect } from "react";
 import Experience from "./components/sections/Experience";
 import SplashCursor from './utils/SplashCursor';
 import GradualBlur from './utils/GradualBlur';
+import Valentine from "./components/sections/Valentine";
 
 
 const Body = styled.div`
@@ -124,45 +125,53 @@ function App() {
 
       <BrowserRouter>
         <Navbar isDarkTheme={isDarkTheme} toggleTheme={toggleTheme} /> {/* Pass isDarkTheme */}
-        <Body>
-          <SplashCursor />
-          <Hero />
-          <Wrapper scrollY={scrollY}>
-            <Skills />
-            <Experience />
-          </Wrapper>
-          <Projects openModal={openModal} setOpenModal={setOpenModal} />
-          <Wrapper scrollY={scrollY}>
-            <Education />
-            <Contact />
-          </Wrapper>
-          <Footer />
-          {openModal.state && (
-            <ProjectDetails
-              openModal={openModal}
-              setOpenModal={setOpenModal}
-            />
-          )}
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <Body>
+                <SplashCursor />
+                <Hero />
+                <Wrapper scrollY={scrollY}>
+                  <Skills />
+                  <Experience />
+                </Wrapper>
+                <Projects openModal={openModal} setOpenModal={setOpenModal} />
+                <Wrapper scrollY={scrollY}>
+                  <Education />
+                  <Contact />
+                </Wrapper>
+                <Footer />
+                {openModal.state && (
+                  <ProjectDetails
+                    openModal={openModal}
+                    setOpenModal={setOpenModal}
+                  />
+                )}
 
-          <GradualBlur
-            target="viewport"
-            position="bottom"
-            height="6rem"
-            strength={2}
-            divCount={5}
-            curve="bezier"
-            exponential={true}
-            opacity={1}
-            style={{
-              position: "fixed",
-              bottom: 0,
-              left: 0,
-              width: "100%",
-              pointerEvents: "none",
-              zIndex: 100,
-            }}
+                <GradualBlur
+                  target="viewport"
+                  position="bottom"
+                  height="6rem"
+                  strength={2}
+                  divCount={5}
+                  curve="bezier"
+                  exponential={true}
+                  opacity={1}
+                  style={{
+                    position: "fixed",
+                    bottom: 0,
+                    left: 0,
+                    width: "100%",
+                    pointerEvents: "none",
+                    zIndex: 100,
+                  }}
+                />
+              </Body>
+            }
           />
-        </Body>
+          <Route path="/valentine" element={<Valentine />} />
+        </Routes>
       </BrowserRouter>
     </ThemeProvider>
   );

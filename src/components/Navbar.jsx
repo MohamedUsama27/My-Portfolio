@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link as LinkR } from "react-router-dom";
 import styled, { useTheme } from "styled-components";
-import { MenuRounded, DarkMode, LightMode } from "@mui/icons-material";
+import { MenuRounded, DarkMode, LightMode, Favorite } from "@mui/icons-material";
 import { Bio } from "../data/constants";
 
 const Nav = styled.div`
@@ -203,6 +203,39 @@ const ThemeToggleButton = styled.button`
   }
 `;
 
+const ValentineButton = styled(LinkR)`
+  border: none;
+  background: ${({ theme }) => theme.card_light};
+  color: ${({ theme }) => theme.text_primary};
+  padding: 18px;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-left: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.4s ease-in-out;
+  text-decoration: none;
+
+  &:hover {
+    background: ${({ theme }) => theme.primary};
+    color: ${({ theme }) => theme.text_primary};
+  }
+
+  &.mobile {
+    display: none;
+    @media screen and (max-width: 768px) {
+      display: flex;
+    }
+  }
+
+  &.desktop {
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  }
+`;
+
 const MobileRightContainer = styled.div`
   display: none;
   align-items: center;
@@ -231,22 +264,37 @@ const Navbar = ({ toggleTheme, isDarkTheme }) => {
               <DarkMode className={!isDarkTheme ? "active" : ""} />
             </ThemeToggleButton>
 
+            <ValentineButton
+              className="mobile"
+              to="/valentine"
+              aria-label="Open Valentine page"
+            >
+              <Favorite />
+            </ValentineButton>
+
             <MobileIcon onClick={() => setIsOpen(!isOpen)}>
               <MenuRounded />
             </MobileIcon>
           </MobileRightContainer>
 
           <NavItems>
-          <NavLink href="#about">About</NavLink>
-          <NavLink href="#Skills">Skills</NavLink>
-          <NavLink href="#Experience">Experience</NavLink>
-          <NavLink href="#Projects">Projects</NavLink>
-          <NavLink href="#Education">Education</NavLink>
-          <NavLink href="#Contact">Contact</NavLink>
-        </NavItems>
+            <NavLink href="#about">About</NavLink>
+            <NavLink href="#Skills">Skills</NavLink>
+            <NavLink href="#Experience">Experience</NavLink>
+            <NavLink href="#Projects">Projects</NavLink>
+            <NavLink href="#Education">Education</NavLink>
+            <NavLink href="#Contact">Contact</NavLink>
+          </NavItems>
 
           <ButtonContainer>
             <GithubButton href={Bio.github} target="_blank">Github Profile</GithubButton>
+            <ValentineButton
+              className="desktop"
+              to="/valentine"
+              aria-label="Open Valentine page"
+            >
+              <Favorite />
+            </ValentineButton>
             <ThemeToggleButton className="desktop" onClick={toggleTheme}>
               <LightMode className={isDarkTheme ? "active" : ""} />
               <DarkMode className={!isDarkTheme ? "active" : ""} />
