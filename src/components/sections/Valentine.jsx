@@ -222,7 +222,22 @@ const ValentinePage = () => {
         const containerRect = buttonContainerRef.current.getBoundingClientRect();
         const noButtonRect = noButtonRef.current.getBoundingClientRect();
 
-        const { x, y } = getRandomPosition(
+        const minDistance = 220;
+        let target = null;
+        for (let i = 0; i < 40; i += 1) {
+            const candidate = getRandomPosition(
+                containerRect,
+                noButtonRect.width,
+                noButtonRect.height,
+                true
+            );
+            const distance = Math.hypot(candidate.x - noButtonPosition.x, candidate.y - noButtonPosition.y);
+            if (distance >= minDistance) {
+                target = candidate;
+                break;
+            }
+        }
+        const { x, y } = target || getRandomPosition(
             containerRect,
             noButtonRect.width,
             noButtonRect.height,
