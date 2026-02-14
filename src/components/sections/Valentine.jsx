@@ -642,7 +642,7 @@ const styles = {
         left: '50%',
         transform: 'translateX(-50%)',
         width: '1400px', // Fixed width to ensure consistent movement area
-        height: '430px', // Fixed height for movement area
+        height: '400px', // Fixed height for movement area
         margin: '20px auto',
         //backgroundColor: 'rgba(255, 255, 255, 0.1)', // Semi-transparent background to visualize the container (optional)
         //borderRadius: '20px',
